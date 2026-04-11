@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Models | Projecte Minairó</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body class="models-page">
 
     <header>
         <nav>
-            <div class="logo">MINAIRÓ<span>_</span></div>
+        <div class="logo">MINAIRÓ<span>_</span></div>
             <ul>
                 <li><a href="index.html">Inici</a></li>
                 <li><a href="models.html">Models</a></li>
@@ -21,50 +20,98 @@
         </nav>
     </header>
 
-    <main class="container">
-        <section class="models-header">
-            <h1>Els nostres Coets</h1>
-            <p>Dissenys propis impresos en 3D i optimitzats per a les condicions del Pallars.</p>
+    <main class="models-container">
+        <h1 class="main-title">HANGAR DE COETS</h1>
+
+        <section class="model-card-premium">
+            <div class="model-visual">
+                <div class="glow-overlay"></div>
+                <div class="rocket-placeholder">
+                    <img src="minairo1.png" alt="Minairó-1" onerror="this.style.display='none'">
+                    <span class="model-label">MN-01</span>
+                </div>
+                <div class="status-badge">OPERATIU</div>
+            </div>
+            
+            <div class="model-content">
+                <header class="model-header">
+                    <span class="sub">PROTOTIP DE PRESSIÓ</span>
+                    <h2>MINAIRÓ-1</h2>
+                </header>
+
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <div class="spec-val">650<span>mm</span></div>
+                        <div class="spec-lab">Alçada</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-val">320<span>g</span></div>
+                        <div class="spec-lab">Pes</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-val">PETG</div>
+                        <div class="spec-lab">Cos</div>
+                    </div>
+                </div>
+
+                <div class="description-box">
+                    <p>Optimitzat per a llançaments hidràulics. Estabilitat provada als cels del Pallars amb un coeficient aerodinàmic de 0.25.</p>
+                </div>
+
+                <div class="tech-tags">
+                    <span>3D PRINTED</span>
+                    <span>WATER PROPULSION</span>
+                    <span>MODULAR FINS</span>
+                </div>
+            </div>
         </section>
 
-        <div class="models-grid">
-            <div class="model-card">
-                <div class="model-image">
-                    <div class="placeholder-img">Minairó-1</div>
+        <section class="model-card-premium reverse">
+            <div class="model-visual">
+                <div class="glow-overlay combustion"></div>
+                <div class="rocket-placeholder">
+                    <span class="model-label">MN-02</span>
                 </div>
-                <div class="model-info">
-                    <span class="tag tag-active">En Proves</span>
-                    <h2>Minairó-1</h2>
-                    <p>El pioner. Estructura modular de 3 etapes per a proves de propulsió per aigua.</p>
-                    <ul>
-                        <li><strong>Pes:</strong> 450g</li>
-                        <li><strong>Material:</strong> PETG Reforçat</li>
-                        <li><strong>Propulsió:</strong> Aigua / Aire comprimit</li>
-                    </ul>
-                </div>
+                <div class="status-badge testing">EN DISSENY</div>
             </div>
+            
+            <div class="model-content">
+                <header class="model-header">
+                    <span class="sub">PROPULSIÓ QUÍMICA</span>
+                    <h2>MINAIRÓ-2</h2>
+                </header>
 
-            <div class="model-card future">
-                <div class="model-image">
-                    <div class="placeholder-img">Minairó-2</div>
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <div class="spec-val">820<span>mm</span></div>
+                        <div class="spec-lab">Alçada</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-val">MOTOR C</div>
+                        <div class="spec-lab">Impuls</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-val">ABS-CF</div>
+                        <div class="spec-lab">Material</div>
+                    </div>
                 </div>
-                <div class="model-info">
-                    <span class="tag">En Disseny</span>
-                    <h2>Minairó-2</h2>
-                    <p>Evolució del prototip per allotjar motors de combustió sòlida i aviònica bàsica.</p>
-                    <ul>
-                        <li><strong>Propulsió:</strong> Motor Sòlid</li>
-                        <li><strong>Objectiu:</strong> Recuperació amb paracaigudes</li>
-                    </ul>
+
+                <div class="description-box">
+                    <p>Dissenyat per a motors sòlids. Inclou badia de telemetria amb Arduino i sistema de recuperació amb paracaigudes actiu.</p>
+                </div>
+
+                <div class="tech-tags">
+                    <span>SOLID FUEL</span>
+                    <span>AVIÒNICA</span>
+                    <span>PARACHUTE</span>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Projecte Minairó - Tecnologia des del Pallars</p>
+        <p>PROJECTE MINAIRÓ &copy; 2024 | PALLARS JUSSÀ</p>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
