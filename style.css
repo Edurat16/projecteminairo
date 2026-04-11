@@ -142,92 +142,153 @@ footer {
     border-top: 1px solid #222;
 }
 
-/* Estils per a la pàgina de Models */
+:root {
+    --primary: #00d4ff;
+    --bg: #0b0e14;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --text: #e0e0e0;
+}
+
+.models-page {
+    background: radial-gradient(circle at top right, #1a1f2c, #0b0e14);
+    font-family: 'Rajdhani', sans-serif;
+    color: var(--text);
+}
+
 .container {
     padding: 120px 10% 50px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .models-header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
+.models-header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    color: var(--primary);
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+/* Graella de Cards */
 .models-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
 }
 
 .model-card {
     background: var(--card-bg);
-    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
     overflow: hidden;
-    transition: 0.4s;
-    border: 1px solid #333;
+    transition: all 0.4s ease;
+    position: relative;
 }
 
 .model-card:hover {
     transform: translateY(-10px);
     border-color: var(--primary);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.placeholder-img {
-    height: 250px;
-    background: #2a2a2a;
+/* Secció de la Imatge/Render */
+.model-image {
+    height: 300px;
+    background: #000;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Orbitron';
-    font-size: 1.5rem;
-    color: #444;
+    overflow: hidden;
 }
 
+.render-bg {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: var(--primary);
+    filter: blur(80px);
+    opacity: 0.2;
+}
+
+.render-bg.combustion {
+    background: #ff6600;
+}
+
+.rocket-render {
+    max-height: 85%;
+    width: auto;
+    z-index: 2;
+    filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.4));
+    transition: transform 0.4s ease;
+}
+
+.model-card:hover .rocket-render {
+    transform: scale(1.1) rotate(2deg);
+}
+
+.model-id {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-family: 'Orbitron';
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.05);
+}
+
+/* Informació */
 .model-info {
-    padding: 25px;
+    padding: 30px;
 }
 
 .model-info h2 {
+    font-family: 'Orbitron';
     margin: 10px 0;
-    color: white;
-}
-
-.model-info ul {
-    list-style: none;
-    margin-top: 15px;
-    font-size: 0.9rem;
-}
-
-.model-info li {
-    margin-bottom: 5px;
+    font-size: 1.8rem;
 }
 
 .tag {
-    display: inline-block;
     padding: 4px 12px;
-    border-radius: 20px;
-    background: #444;
-    font-size: 0.7rem;
-    font-weight: bold;
-    text-transform: uppercase;
+    background: #333;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 4px;
 }
 
 .tag-active {
     background: var(--primary);
-    color: black;
+    color: #000;
 }
 
-/* Estil per a models futurs */
-.model-card.future {
-    opacity: 0.7;
-    filter: grayscale(1);
+.specs-list {
+    list-style: none;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
 }
 
-.model-card.future:hover {
-    filter: grayscale(0.5);
+.specs-list li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
 }
 
-/* Marca la pàgina activa al menú */
-nav ul li a.active {
+.specs-list strong {
     color: var(--primary);
-    border-bottom: 2px solid var(--primary);
+    margin-right: 10px;
+}
+
+/* Estat Futur */
+.future {
+    opacity: 0.8;
+}
+
+.placeholder-text {
+    font-family: 'Orbitron';
+    color: #222;
+    font-size: 2rem;
 }
