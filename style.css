@@ -141,157 +141,78 @@ footer {
     border-top: 1px solid #222;
 }
 
-/* Estils Generals de la pàgina de Models */
-.models-page {
+:root {
+    --primary: #00d4ff;
+    --bg: #0b0e14;
+    --card-bg: rgba(255, 255, 255, 0.03);
+}
+
+body {
     background: radial-gradient(circle at top right, #1a1f2c, #0b0e14);
+    color: white;
     font-family: 'Rajdhani', sans-serif;
+    margin: 0;
 }
 
-.main-title {
-    text-align: center;
-    padding: 120px 0 40px;
-    font-size: 3rem;
-    color: var(--primary);
-    text-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+header {
+    padding: 20px 10%;
+    background: rgba(11, 14, 20, 0.9);
+    border-bottom: 1px solid rgba(0, 212, 255, 0.1);
 }
 
-.models-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding-bottom: 100px;
+nav { display: flex; justify-content: space-between; align-items: center; }
+nav ul { display: flex; list-style: none; }
+nav ul li a { color: white; text-decoration: none; margin-left: 25px; font-family: 'Orbitron'; font-size: 0.8rem; }
+
+.logo { font-family: 'Orbitron'; font-size: 1.5rem; color: var(--primary); }
+.logo span { color: white; animation: blink 1s infinite; }
+
+@keyframes blink { 50% { opacity: 0; } }
+
+.container { padding: 100px 10% 50px; }
+.main-title { text-align: center; font-family: 'Orbitron'; color: var(--primary); margin-bottom: 50px; }
+
+/* LA GRAELLA DE 2 COLUMNES */
+.models-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
 }
 
-/* Card Premium */
-.model-card-premium {
-    display: flex;
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
+.model-card {
+    background: var(--card-bg);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    margin-bottom: 60px;
+    border-radius: 15px;
     overflow: hidden;
-    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(10px);
 }
 
-.model-card-premium:hover {
-    transform: scale(1.02);
-    border-color: var(--primary);
-    box-shadow: 0 0 40px rgba(0, 212, 255, 0.1);
-}
-
-.model-card-premium.reverse {
-    flex-direction: row-reverse;
-}
-
-/* Visual del coet */
-.model-visual {
-    flex: 1;
-    min-height: 400px;
+/* Espai buit estil tecnològic (SENSE IMATGE) */
+.model-visual-empty {
+    height: 200px;
     background: #000;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.glow-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(0, 212, 255, 0.2) 0%, transparent 70%);
-}
+.model-visual-empty.design { background: linear-gradient(45deg, #000, #111); }
 
-.glow-overlay.combustion {
-    background: radial-gradient(circle, rgba(255, 102, 0, 0.2) 0%, transparent 70%);
-}
+.id-tag { font-family: 'Orbitron'; font-size: 3rem; color: rgba(255,255,255,0.03); }
 
-.rocket-placeholder {
-    font-family: 'Orbitron';
-    font-size: 4rem;
-    color: rgba(255,255,255,0.05);
-    z-index: 1;
-}
+.model-info { padding: 30px; }
+.model-info h2 { font-family: 'Orbitron'; margin: 10px 0; color: white; }
 
-.status-badge {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    padding: 5px 15px;
-    background: var(--primary);
-    color: #000;
-    font-weight: 700;
-    font-size: 0.8rem;
-    border-radius: 5px;
-}
+.tag { font-size: 0.7rem; padding: 4px 10px; background: #333; border-radius: 4px; font-weight: bold; }
+.tag.active { background: var(--primary); color: black; }
 
-.status-badge.testing {
-    background: #ffae00;
-}
+.specs { list-style: none; padding: 0; margin-top: 15px; border-top: 1px solid #333; padding-top: 15px; }
+.specs li { font-size: 0.9rem; margin-bottom: 5px; }
+.specs strong { color: var(--primary); }
 
-/* Contingut */
-.model-content {
-    flex: 1.2;
-    padding: 50px;
-}
-
-.model-header .sub {
-    color: var(--primary);
-    letter-spacing: 4px;
-    font-size: 0.9rem;
-}
-
-.model-header h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.specs-grid {
-    display: flex;
-    gap: 30px;
-    margin-bottom: 30px;
-}
-
-.spec-item {
-    border-left: 2px solid var(--primary);
-    padding-left: 15px;
-}
-
-.spec-val {
-    font-size: 1.8rem;
-    font-weight: 700;
-    line-height: 1;
-}
-
-.spec-val span {
-    font-size: 0.8rem;
-    margin-left: 4px;
-    color: #888;
-}
-
-.description-box {
-    background: rgba(0,0,0,0.3);
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 30px;
-}
-
-.tech-tags span {
-    display: inline-block;
-    border: 1px solid #444;
-    padding: 5px 12px;
-    border-radius: 4px;
-    font-size: 0.7rem;
-    margin-right: 10px;
-    color: #aaa;
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .model-card-premium, .model-card-premium.reverse {
-        flex-direction: column;
-    }
-    .model-content {
-        padding: 30px;
-    }
+/* Responsive */
+@media (max-width: 800px) {
+    .models-grid { grid-template-columns: 1fr; }
 }
