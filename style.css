@@ -141,92 +141,157 @@ footer {
     border-top: 1px solid #222;
 }
 
-/* Estils per a la pàgina de Models */
-.container {
-    padding: 120px 10% 50px;
+/* Estils Generals de la pàgina de Models */
+.models-page {
+    background: radial-gradient(circle at top right, #1a1f2c, #0b0e14);
+    font-family: 'Rajdhani', sans-serif;
 }
 
-.models-header {
+.main-title {
     text-align: center;
-    margin-bottom: 50px;
+    padding: 120px 0 40px;
+    font-size: 3rem;
+    color: var(--primary);
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
 }
 
-.models-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+.models-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-bottom: 100px;
 }
 
-.model-card {
-    background: var(--card-bg);
-    border-radius: 15px;
+/* Card Premium */
+.model-card-premium {
+    display: flex;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    margin-bottom: 60px;
     overflow: hidden;
-    transition: 0.4s;
-    border: 1px solid #333;
+    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.model-card:hover {
-    transform: translateY(-10px);
+.model-card-premium:hover {
+    transform: scale(1.02);
     border-color: var(--primary);
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.1);
 }
 
-.placeholder-img {
-    height: 250px;
-    background: #2a2a2a;
+.model-card-premium.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Visual del coet */
+.model-visual {
+    flex: 1;
+    min-height: 400px;
+    background: #000;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glow-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.2) 0%, transparent 70%);
+}
+
+.glow-overlay.combustion {
+    background: radial-gradient(circle, rgba(255, 102, 0, 0.2) 0%, transparent 70%);
+}
+
+.rocket-placeholder {
     font-family: 'Orbitron';
-    font-size: 1.5rem;
-    color: #444;
+    font-size: 4rem;
+    color: rgba(255,255,255,0.05);
+    z-index: 1;
 }
 
-.model-info {
-    padding: 25px;
+.status-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 5px 15px;
+    background: var(--primary);
+    color: #000;
+    font-weight: 700;
+    font-size: 0.8rem;
+    border-radius: 5px;
 }
 
-.model-info h2 {
-    margin: 10px 0;
-    color: white;
+.status-badge.testing {
+    background: #ffae00;
 }
 
-.model-info ul {
-    list-style: none;
-    margin-top: 15px;
+/* Contingut */
+.model-content {
+    flex: 1.2;
+    padding: 50px;
+}
+
+.model-header .sub {
+    color: var(--primary);
+    letter-spacing: 4px;
     font-size: 0.9rem;
 }
 
-.model-info li {
-    margin-bottom: 5px;
+.model-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
-.tag {
+.specs-grid {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.spec-item {
+    border-left: 2px solid var(--primary);
+    padding-left: 15px;
+}
+
+.spec-val {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.spec-val span {
+    font-size: 0.8rem;
+    margin-left: 4px;
+    color: #888;
+}
+
+.description-box {
+    background: rgba(0,0,0,0.3);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.tech-tags span {
     display: inline-block;
-    padding: 4px 12px;
-    border-radius: 20px;
-    background: #444;
+    border: 1px solid #444;
+    padding: 5px 12px;
+    border-radius: 4px;
     font-size: 0.7rem;
-    font-weight: bold;
-    text-transform: uppercase;
+    margin-right: 10px;
+    color: #aaa;
 }
 
-.tag-active {
-    background: var(--primary);
-    color: black;
-}
-
-/* Estil per a models futurs */
-.model-card.future {
-    opacity: 0.7;
-    filter: grayscale(1);
-}
-
-.model-card.future:hover {
-    filter: grayscale(0.5);
-}
-
-/* Marca la pàgina activa al menú */
-nav ul li a.active {
-    color: var(--primary);
-    border-bottom: 2px solid var(--primary);
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .model-card-premium, .model-card-premium.reverse {
+        flex-direction: column;
+    }
+    .model-content {
+        padding: 30px;
+    }
 }
