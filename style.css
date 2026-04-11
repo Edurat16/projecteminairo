@@ -196,16 +196,21 @@ section, .container {
 
 .tag { 
     font-size: 0.7rem; 
-    padding: 4px 10px; 
-    background: #333; 
+    padding: 4px 12px; 
+    background: #333; /* Color per defecte (En disseny) */
+    color: white;
     border-radius: 4px; 
     font-weight: bold; 
-    font-family: 'Orbitron';
+    font-family: 'Orbitron', sans-serif;
+    display: inline-block;
+    text-transform: uppercase;
 }
 
-.tag.active { 
-    background: var(--primary); 
-    color: black; 
+/* AIXÒ ÉS EL QUE VOLIES: El recuadre blau quan està operatiu */
+.tag.tag-active { 
+    background-color: var(--primary); /* El teu blau #00d4ff */
+    color: #000; /* Text negre perquè es llegeixi bé sobre el blau */
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.5); /* Efecte de lluentor */
 }
 
 .specs { 
