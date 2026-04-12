@@ -157,12 +157,17 @@ footer {
 
 .models-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
+    max-width: 960px;
+    margin: 0 auto;
+    justify-content: center;
+    justify-items: center;
 }
 
 .model-card {
     width: 100%;
+    max-width: 360px;
     background: var(--card-bg);
     border-radius: 15px;
     overflow: hidden;
@@ -269,4 +274,3 @@ nav ul li a.active {
     color: var(--primary);
     border-bottom: 2px solid var(--primary);
 }
-
